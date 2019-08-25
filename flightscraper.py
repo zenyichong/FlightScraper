@@ -307,38 +307,3 @@ class Kayak(Scraper):
                 close[-1].click()
         except NoSuchElementException:
             pass
-
-# class Googleflights(Scraper):
-
-#     def __init__(self):
-#         super().__init__()
-
-#     def create_urls(self, row_num):
-#         """
-#         Creates urls for scraping Google Flights using data from the
-#         'data' DataFrame object associated with the parent Scraper class.
-
-#         :param self: Googleflights class instance
-#         :param row_num: Current row number of dataframe associated with
-#         the Scraper class
-#         :returns: a list of urls
-#         """
-#         row = self.data.iloc[row_num]
-#         urls = []
-#         for pair in row['Date_pairs']:
-#             url = ('https://www.google.com/flights?hl=en&gl=my#flt='
-#                    + f"{row['Origin']}.{row['Destination']}.{str(pair[0])}"
-#                    + f"*{row['Destination']}.{row['Origin']}.{str(pair[1])}"
-#                    + ';c:MYR;e:1;sd:1;t:f')
-#             urls.append(url)
-#         return(urls)
-
-
-spider = Skyscanner()
-spider.scrape_site()
-# urls = spider.create_urls(0)
-# soup = spider.scrape_page(urls[0])
-# contents = spider.parse_page(soup)
-# spider.driver.quit()
-# import pprint
-# pprint.pprint(contents)
